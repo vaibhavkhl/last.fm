@@ -2,14 +2,13 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:LoginCtrl
+ * @name clientApp.controller:SignupCtrl
  * @description
- * # LoginCtrl
+ * # SignupCtrl
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope) {
-
+  .controller('SignupCtrl', function ($scope) {
     $scope.user = {};
 
     $scope.userFields = [
@@ -28,6 +27,15 @@ angular.module('clientApp')
       templateOptions: {
         type: 'password',
         label: 'Password',
+        placeholder: 'Password'
+      }
+    },
+    {
+    	key: 'confirmpassword',
+    	type: 'input',
+    	templateOptions: {
+        type: 'password',
+        label: 'Confirm Password',
         placeholder: 'Password'
       }
     }
