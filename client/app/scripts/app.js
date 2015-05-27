@@ -11,9 +11,10 @@
 angular
   .module('clientApp', [
     'ngMessages',
-    'ngRoute'
+    'ngRoute',
+    'ng-token-auth'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $authProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -26,4 +27,8 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    $authProvider.configure({
+      apiUrl: 'http://localhost:3000'
+    });
   });
