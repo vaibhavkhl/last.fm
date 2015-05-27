@@ -11,22 +11,18 @@
 angular
   .module('clientApp', [
     'ngMessages',
-    'ngRoute',
+    'ui.router',
     'ng-token-auth'
   ])
-  .config(function ($routeProvider, $authProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+  .config(function ($stateProvider, $urlRouterProvider, $authProvider) {
+    $stateProvider
+      .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       });
+
+    $urlRouterProvider.otherwise('/login');
 
     $authProvider.configure({
       apiUrl: 'http://localhost:3000'
