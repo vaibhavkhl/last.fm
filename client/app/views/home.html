@@ -1,1 +1,13 @@
 <h1>Home</h1>
+
+<input type="text" ng-model="query"></input>
+<button class="btn" ng-click="search(query)"></button>
+
+<div ng-if="showSearch "> <h1>Search Results</h1>
+	<div ng-repeat="artist in artists" ng-click="getTracks(artist.name)">{{artist.name}}</div>
+</div>
+
+<div ng-if="showTracks">
+	<h1>Top Tracks</h1>
+	<div ng-repeat="track in topTracks">{{track.name}}</div>
+</div>
