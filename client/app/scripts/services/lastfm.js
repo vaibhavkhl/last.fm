@@ -21,4 +21,12 @@ angular.module('clientApp')
     	return $http.get(baseUrl + '?method=artist.gettoptracks&artist=' + artist + '&api_key=' + apikey + '&format=json')
     };
 
+    this.getAlbums = function(artist) {
+    	return $http.get(baseUrl + '?method=artist.gettopalbums&artist=' + artist + '&api_key=' + apikey + '&format=json')
+    };
+
+    this.getSimilar = function(artist) {
+    	return $http.get(baseUrl + '?method=artist.getsimilar&artist=' + artist + '&api_key=' + apikey + '&format=json')
+    };
+
   });
