@@ -27,11 +27,16 @@ angular
         url: '/signup',
         templateUrl: 'views/signup.html',
         controller: 'SignupCtrl'
-      });
+      })
+      .state('home', {
+        url: '/home',
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
+      })
 
     $urlRouterProvider.otherwise('/login');
 
     $authProvider.configure({
-      apiUrl: 'http://localhost:3000'
+      apiUrl: 'http://localhost:3000/api'
     });
   });

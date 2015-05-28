@@ -8,9 +8,20 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('SignupCtrl', function ($scope) {
+  .controller('SignupCtrl', function ($scope, $auth) {
     $scope.user = {};
 
+    $scope.submit = function() {
+      $auth.submitRegistration($scope.user)
+        .then(function(resp) {
+          console.log('success')
+        })
+        .catch(function(resp) {
+          console.log('failure')
+        });
+    };
+
+    // angular-formly
     $scope.userFields = [
     {
       key: 'email',
@@ -31,7 +42,7 @@ angular.module('clientApp')
       }
     },
     {
-    	key: 'confirmpassword',
+    	key: 'password_confirmation',
     	type: 'input',
     	templateOptions: {
         type: 'password',
