@@ -8,9 +8,18 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope) {
-
+  .controller('LoginCtrl', function ($scope, $auth) {
     $scope.user = {};
+
+    $scope.submit = function() {
+      $auth.submitLogin($scope.user)
+        .then(function(resp) {
+          console.log('success')
+        })
+        .catch(function(resp) {
+          console.log('failure')
+        });
+    };
 
     $scope.userFields = [
     {
