@@ -10,7 +10,7 @@
 angular.module('clientApp')
   .service('lastFm', function ($http) {
   	// AngularJS will instantiate a singleton by calling "new" on this function
-    var baseUrl = 'http://ws.audioscrobbler.com/2.0/';
+    var baseUrl = 'https://ws.audioscrobbler.com/2.0/';
     var apikey = '3c3a2bae12b83afb0b4af378d2783f08';
 
     this.search = function(query) {
