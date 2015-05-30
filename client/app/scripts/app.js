@@ -48,7 +48,8 @@ angular
     $urlRouterProvider.otherwise('/login');
 
     $authProvider.configure({
-      apiUrl: 'https://localhost:3000/api'
+      //apiUrl: 'https://localhost:3000/api'
+      apiUrl: 'https://last-fm-app.herokuapp.com'
     });
   })
   .run(function ($rootScope, $state) {
