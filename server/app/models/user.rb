@@ -3,4 +3,6 @@ class User < ActiveRecord::Base
          :registerable
 
   include DeviseTokenAuth::Concerns::User
+
+  before_save -> { skip_confirmation! }
 end
