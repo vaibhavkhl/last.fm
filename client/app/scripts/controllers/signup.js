@@ -14,7 +14,7 @@ angular.module('clientApp')
     $scope.submit = function() {
       $auth.submitRegistration($scope.user)
         .then(function(resp) {
-          console.log('success')
+          console.log(resp)
         })
         .catch(function(resp) {
           console.log('failure')

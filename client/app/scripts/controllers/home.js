@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('HomeCtrl', function ($scope, lastFm) {
+  .controller('HomeCtrl', function ($scope, lastFm, $rootScope) {
 
   	$scope.showSearch = false;
   	$scope.showTracks = false;

@@ -48,14 +48,11 @@ angular
     $urlRouterProvider.otherwise('/login');
 
     $authProvider.configure({
-      //apiUrl: 'https://localhost:3000/api'
       apiUrl: '/api'
     });
   })
   .run(function ($rootScope, $state) {
     $rootScope.$on('auth:login-success', function(ev, user) {
-      console.log(user)
-      $rootScope.user = user;
       console.log("Successful login!")
       $state.go('home')
     });
@@ -69,7 +66,8 @@ angular
     })
 
     $rootScope.$on('auth:invalid', function() {
-      console.log('user not allowed in invalid');
-      $state.go('notauthorized');
+      console.log('unauthorized');
+      $state.go('login');
+      console.log('aadasfa')
     })
   });
