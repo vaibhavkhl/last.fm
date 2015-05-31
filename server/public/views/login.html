@@ -1,1 +1,1 @@
-<h1>Login</h1> <formly-form model="user" fields="userFields"> <button type="submit" class="btn btn-default" ng-click="submit(user)">Submit</button> </formly-form>
+<h1>Login</h1> <div class="alert alert-dismissible alert-danger" ng-show="errors"> <strong>{{errors}}</strong> </div> <formly-form model="user" fields="userFields"> <button type="submit" class="btn btn-default" ng-click="submit(user)">Submit</button> </formly-form>
