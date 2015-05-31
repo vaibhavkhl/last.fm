@@ -12,7 +12,7 @@ angular.module('clientApp')
 
   	$scope.showSearch = false;
   	$scope.showTracks = false;
-
+    var userId = $rootScope.current_user.id;
     getSearchHistory();
 
     $scope.search = function(query) {
@@ -23,7 +23,7 @@ angular.module('clientApp')
     		$scope.artists = response.data.results.artistmatches.artist;
     	});
 
-      searchHistory.create(query, $rootScope.current_user.id).then(function() {
+      searchHistory.create(query, userId).then(function() {
         getSearchHistory();
       })
     };
@@ -49,8 +49,7 @@ angular.module('clientApp')
 
     function getSearchHistory() {
       searchHistory.all().then(function(response) {
-        $scope.searchHistories = response.data;
-        console.log($scope.searchHistories)
+        $scope.searchHistories = _.where(response.data, {user_id: userId});
       });
     }
   });

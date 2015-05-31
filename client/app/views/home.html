@@ -1,45 +1,49 @@
-<div class="search-box">
-  <input type="search" placeholder="search..." ng-model="query"></input>
-  <button class="btn btn-primary btn-lg active" ng-click="search(query)">Search</button>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="search-box col-md-6">
+      <input type="search" placeholder="search..." ng-model="query"></input>
+      <button class="btn btn-primary btn-lg active" ng-click="search(query)">Search</button>
+    </div>
+
+    <div class="col-md-4 search-history">
+	    <h1>Search History</h1>
+	    <div ng-repeat="history in searchHistories">{{history.artist}}</div>
+    </div>
+  </div>
 </div>
 
-<div ng-if="loading">
-  <img src="images/ring.gif">
+<div ng-if="loading" class="container">
+  <img src="images/ring.gif" class="center">
 </div>
 
-<div ng-if="showSearch "> <h1>Search Results</h1>
-  <ul class="list-group">
-	  <li class="list-group-item" ng-class="{'res-hover': hovering}"
-	    ng-repeat="artist in artists" ng-click="getArtistInfo(artist.name)"
-	    ng-mouseenter="hovering=true" ng-mouseleave="hovering=false">
-	    {{artist.name}}</li>
-	</ul>
+<div class="container-fluid">
+  <div class="row">
+    <div ng-if="showSearch" class="col-md-6"> <h1>Search Results</h1>
+      <ul class="list-group">
+	      <li class="list-group-item" ng-class="{'res-hover': hovering}"
+	        ng-repeat="artist in artists" ng-click="getArtistInfo(artist.name)"
+	        ng-mouseenter="hovering=true" ng-mouseleave="hovering=false">
+	        {{artist.name}}</li>
+	    </ul>
+    </div>
+  </div>
 </div>
 
-<div class="container">
-  <div ng-if="showArtistInfo">
+<div class="container-fluid" ng-if="showArtistInfo">
+	<div class="row">
+	<div class="col-md-4">
 	  <h1>Top Tracks</h1>
-	  <div ng-repeat="track in topTracks">{{track.name}}</div>
-  </div>
-</div>
+	  <li ng-repeat="track in topTracks">{{track.name}}</li>
+	</div>
 
-<div class="container">
-  <div>
-	  <h1>Top Albums</h1>
-	  <div ng-repeat="album in albums">{{album.name}}</div>
+  <div class="col-md-4">
+    <h1>Top Albums</h1>
+    <li ng-repeat="album in albums">{{album.name}}</li>
   </div>
-</div>
 
-<div class="container">
-  <div>
-	  <h1>Similar Artists</h1>
-	  <div ng-repeat="sartist in similarArtist">{{sartist.name}}</div>
-  </div>
-</div>
-
-<div class="container">
-  <div>
-	  <h1>Search History</h1>
-	  <div ng-repeat="history in searchHistories">{{history.artist}}</div>
+  <div class="col-md-4">
+    <h1>Similar Artists</h1>
+    <li ng-repeat="sartist in similarArtist">{{sartist.name}}</li>
   </div>
 </div>

@@ -2,8 +2,13 @@ $base-color: cadetblue;
 
 .search-box {
   background: $base-color;
-  height: 100px;
   padding: 30px;
+  margin: 30px;
+}
+
+.search-history {
+	padding-left: 30px;
+	margin: 30px;
 }
 
 .res-hover {
