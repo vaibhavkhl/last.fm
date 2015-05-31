@@ -21,11 +21,18 @@ $base-color: cadetblue;
 }
 
 .brand-text {
-  color: pink;
+  color: pink !important;
 }
 
 .artist-info {
 	padding: 20px;
   background: lavenderblush;
   color: brown;
+}
+
+input[type=search] {
+	width: 300px;
+  height: 40px;
+  padding: 5px;
+  margin: 10px;
 }
