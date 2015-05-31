@@ -16,7 +16,11 @@ describe('Controller: SignupCtrl', function () {
     });
   }));
 
-  // it('should attach a list of awesomeThings to the scope', function () {
-  //   expect(scope.awesomeThings.length).toBe(3);
-  // });
+  xit('should have empty user object on scope', function() {
+    // expect(scope.user.toBe({}))
+  })
+
+  it('should attach three form fields to scope', function () {
+    expect(scope.userFields.length).toBe(3);
+  });
 });
