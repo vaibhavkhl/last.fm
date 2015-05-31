@@ -14,10 +14,11 @@ angular.module('clientApp')
     $scope.submit = function() {
       $auth.submitRegistration($scope.user)
         .then(function(resp) {
-          console.log(resp)
+          $scope.errors = resp.data.errors.full_messages[0];
+          $state.go('login')
         })
         .catch(function(resp) {
-          console.log('failure')
+          $scope.errors = resp.data.errors.full_messages[0];
         });
     };
 

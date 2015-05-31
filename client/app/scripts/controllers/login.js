@@ -17,7 +17,7 @@ angular.module('clientApp')
           console.log('success')
         })
         .catch(function(resp) {
-          console.log('failure')
+          $scope.errors = resp.errors[0];
         });
     };
 

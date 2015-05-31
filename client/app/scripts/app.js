@@ -57,6 +57,14 @@ angular
       $state.go('home')
     });
 
+    // $rootScope.$on('auth:login-error', function(ev, reason) {
+    //   $scope.errors = reason.errors[0];
+    // });
+
+    // $rootScope.$on('auth:login-error', function(ev, reason) {
+    //   $scope.errors = reason.errors[0];
+    // });
+
     $rootScope.$on('auth:logout-success', function(ev) {
       console.log('goodbye');
     });
@@ -70,4 +78,5 @@ angular
       $state.go('login');
       console.log('aadasfa')
     })
+
   });
