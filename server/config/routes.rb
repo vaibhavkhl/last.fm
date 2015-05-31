@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   scope '/api' do
+    resources :search_histories, except: [:new, :edit, :update, :destroy]
     mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
   end
   # The priority is based upon order of creation: first created -> highest priority.

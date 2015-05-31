@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527173214) do
+ActiveRecord::Schema.define(version: 20150531111437) do
+
+  create_table "search_histories", force: true do |t|
+    t.integer  "user_id"
+    t.string   "artist"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "search_histories", ["user_id"], name: "index_search_histories_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "provider",                            null: false

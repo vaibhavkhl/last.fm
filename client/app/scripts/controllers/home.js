@@ -8,10 +8,12 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('HomeCtrl', function ($scope, lastFm, $rootScope) {
+  .controller('HomeCtrl', function ($scope, lastFm, $rootScope, searchHistory) {
 
   	$scope.showSearch = false;
   	$scope.showTracks = false;
+
+    getSearchHistory();
 
     $scope.search = function(query) {
     	$scope.loading = true;
@@ -20,6 +22,10 @@ angular.module('clientApp')
     		$scope.showSearch = true;
     		$scope.artists = response.data.results.artistmatches.artist;
     	});
+
+      searchHistory.create(query, $rootScope.current_user.id).then(function() {
+        getSearchHistory();
+      })
     };
 
     $scope.getArtistInfo = function(artist) {
@@ -38,6 +44,13 @@ angular.module('clientApp')
 
     	lastFm.getSimilar(artist).then(function(response) {
     		$scope.similarArtist = response.data.similarartists.artist
-    	})
+    	});
     };
+
+    function getSearchHistory() {
+      searchHistory.all().then(function(response) {
+        $scope.searchHistories = response.data;
+        console.log($scope.searchHistories)
+      });
+    }
   });

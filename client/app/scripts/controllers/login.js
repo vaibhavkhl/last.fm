@@ -5,16 +5,16 @@
  * @name clientApp.controller:LoginCtrl
  * @description
  * # LoginCtrl
- * Controller of the clientApp
+ * Controller of the clientAppl
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope, $auth) {
+  .controller('LoginCtrl', function ($scope, $auth, $rootScope) {
     $scope.user = {};
 
     $scope.submit = function() {
       $auth.submitLogin($scope.user)
         .then(function(resp) {
-          console.log('success')
+          $rootScope.current_user = resp;
         })
         .catch(function(resp) {
           $scope.errors = resp.errors[0];

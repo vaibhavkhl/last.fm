@@ -22,3 +22,24 @@
 	  <div ng-repeat="track in topTracks">{{track.name}}</div>
   </div>
 </div>
+
+<div class="container">
+  <div>
+	  <h1>Top Albums</h1>
+	  <div ng-repeat="album in albums">{{album.name}}</div>
+  </div>
+</div>
+
+<div class="container">
+  <div>
+	  <h1>Similar Artists</h1>
+	  <div ng-repeat="sartist in similarArtist">{{sartist.name}}</div>
+  </div>
+</div>
+
+<div class="container">
+  <div>
+	  <h1>Search History</h1>
+	  <div ng-repeat="history in searchHistories">{{history.artist}}</div>
+  </div>
+</div>
