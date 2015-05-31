@@ -11,7 +11,7 @@ It uses [devise-token-auth](https://github.com/lynndylanhurley/devise_token_auth
 - [Angular formly](https://github.com/formly-js/angular-formly)
 - [UI Router](https://github.com/angular-ui/ui-router)
 
-## Running locally
+#### Running locally
 
 ``` git clone https://github.com/vaibhavkhl/last.fm.git ```
 
@@ -29,4 +29,16 @@ $ cd server
 $ bundle install
 $ bundle exec rake db:create && bundle exec rake db:migrate
 $ rails s
+```
+#### Testing
+
+server specs
+```
+$ cd server
+$ bundle exce rspec
+```
+client specs
+```
+$ cd client
+$ grunt test
 ```
