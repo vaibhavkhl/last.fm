@@ -13,8 +13,8 @@ angular.module('clientApp')
 
     $scope.submit = function() {
       $auth.submitRegistration($scope.user)
-        .then(function(resp) {
-          $rootScope.current_user = resp;
+        .then(function(response) {
+          $rootScope.current_user = response.data.data;
           $state.go('home')
         })
         .catch(function(resp) {

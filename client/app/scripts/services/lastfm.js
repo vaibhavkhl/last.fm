@@ -14,19 +14,19 @@ angular.module('clientApp')
     var apikey = '3c3a2bae12b83afb0b4af378d2783f08';
 
     this.search = function(query) {
-    	return $http.get(baseUrl + '?method=artist.search&artist=' + query + '&api_key=' + apikey + '&format=json')
+    	return $http.get(baseUrl + '?method=artist.search&artist=' + query + '&api_key=' + apikey + '&format=json');
     };
 
     this.getTracks = function(artist) {
-    	return $http.get(baseUrl + '?method=artist.gettoptracks&artist=' + artist + '&api_key=' + apikey + '&format=json')
+    	return $http.get(baseUrl + '?method=artist.gettoptracks&artist=' + artist + '&api_key=' + apikey + '&format=json');
     };
 
     this.getAlbums = function(artist) {
-    	return $http.get(baseUrl + '?method=artist.gettopalbums&artist=' + artist + '&api_key=' + apikey + '&format=json')
+    	return $http.get(baseUrl + '?method=artist.gettopalbums&artist=' + artist + '&api_key=' + apikey + '&format=json');
     };
 
     this.getSimilar = function(artist) {
-    	return $http.get(baseUrl + '?method=artist.getsimilar&artist=' + artist + '&api_key=' + apikey + '&format=json')
+    	return $http.get(baseUrl + '?method=artist.getsimilar&artist=' + artist + '&api_key=' + apikey + '&format=json');
     };
 
   });

@@ -11,8 +11,8 @@ angular.module('clientApp')
   .service('searchHistory', function ($http, $auth) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
-    this.all = function(user) {
-      return $http.get($auth.apiUrl() + '/search_histories')
+    this.all = function() {
+      return $http.get($auth.apiUrl() + '/search_histories');
     };
 
     this.create = function(query, id) {

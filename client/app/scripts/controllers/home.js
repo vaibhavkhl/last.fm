@@ -25,7 +25,7 @@ angular.module('clientApp')
 
       searchHistory.create(query, userId).then(function() {
         getSearchHistory();
-      })
+      });
     };
 
     $scope.getArtistInfo = function(artist) {
@@ -43,7 +43,7 @@ angular.module('clientApp')
     	});
 
     	lastFm.getSimilar(artist).then(function(response) {
-    		$scope.similarArtist = response.data.similarartists.artist
+    		$scope.similarArtist = response.data.similarartists.artist;
     	});
     };
 

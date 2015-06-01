@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-  .controller('IndexCtrl', function ($scope, $auth, $state, $rootScope) {
+  .controller('IndexCtrl', function ($scope, $auth, $state) {
 
   	$scope.signOut = function() {
   		$auth.signOut().then(function() {
