@@ -8,12 +8,13 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('SignupCtrl', function ($scope, $auth, $state) {
+  .controller('SignupCtrl', function ($scope, $auth, $state, $rootScope) {
     $scope.user = {};
 
     $scope.submit = function() {
       $auth.submitRegistration($scope.user)
         .then(function(resp) {
+          $rootScope.current_user = resp;
           $state.go('home')
         })
         .catch(function(resp) {
