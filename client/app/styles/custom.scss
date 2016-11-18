@@ -1,9 +1,15 @@
-$base-color: cadetblue;
+$base-color: black;
+
+body {
+  background-color: #F2F2F2;
+}
+input[type=search] {
+	width: 100%;
+  height: 40px;
+}
 
 .search-box {
-  background: $base-color;
-  padding: 30px;
-  margin: 30px;
+  background: gray;
 }
 
 .search-history {
@@ -17,7 +23,7 @@ $base-color: cadetblue;
 }
 
 .navbar-default {
-	background: $base-color
+	background: black
 }
 
 .brand-text {
@@ -26,13 +32,5 @@ $base-color: cadetblue;
 
 .artist-info {
 	padding: 20px;
-  background: lavenderblush;
-  color: brown;
-}
-
-input[type=search] {
-	width: 300px;
-  height: 40px;
-  padding: 5px;
-  margin: 10px;
+  color: black;
 }
